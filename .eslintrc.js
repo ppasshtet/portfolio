@@ -15,5 +15,11 @@ module.exports = {
   plugins: [
   ],
   // add your custom rules here
-  rules: {}
+  rules: {
+    'no-console': 'off',
+    'vue/multi-word-component-names': 'off',
+    'vue/attribute-hyphenation': 'off',
+    'vue/multi-word-component-names': 'off',
+    'vue/attribute-hyphenation': 'off'
+  }
 }
