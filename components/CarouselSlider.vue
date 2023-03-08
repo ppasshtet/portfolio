@@ -1,28 +1,58 @@
 <template>
-  <div class="carousel">
+  <div class="carouselSlider">
     <carousel
-      :autoplay="false"
-      :nav="false"
+      class="carousel"
+      :perPage="1"
       :loop="true"
-      :items="1"
+      :autoplay="true"
+      :autoplayTimeout="4000"
+      paginationColor="#B6B6B6"
     >
-      <img src="@/static/png/discordHunter.png">
+      <slide>
+        <img src="@/static/img/discordLink.svg" alt="">
+      </slide>
+      <slide>
+        <img src="@/static/img/discordSettings.svg" alt="">
+      </slide>
+      <slide>
+        <img src="@/static/img/webAio.svg" alt="">
+      </slide>
+      <slide>
+        <img src="@/static/img/dashboardEnigma.svg" alt="">
+      </slide>
+      <slide>
+        <img src="@/static/img/infinityGirls.svg" alt="">
+      </slide>
+      <slide>
+        <img src="@/static/img/heroesCity.svg" alt="">
+      </slide>
+      <slide>
+        <img src="@/static/img/hackaton.svg" alt="">
+      </slide>
     </carousel>
   </div>
 </template>
 
 <script>
-
-import carousel from 'vue-owl-carousel'
+import { Carousel, Slide } from 'vue-carousel'
 
 export default {
-  components: { carousel }
+  components: {
+    Carousel,
+    Slide
+  }
 }
-
 </script>
 
 <style lang="scss">
-.carousel {
+.carouselSlider {
   padding-top: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.carousel {
+  width: 900px;
+  height: auto;
 }
 </style>

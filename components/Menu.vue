@@ -29,12 +29,22 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-    .menu {
-        font-family: "DMSansRegular";
-        font-size: 14px;
-        line-height: 18px;
-    }
-    .link{
-        color: $brand;
-    }
+.menu {
+  font-family: "DMSansRegular";
+  font-size: 14px;
+  line-height: 18px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.link{
+  color: $brand;
+  padding-left: 70px;
+  display: flex;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+.link:hover {
+  color: $gray;
+}
 </style>

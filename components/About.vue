@@ -1,7 +1,7 @@
 <template>
   <div class="about">
     <div class="about-image">
-      <img src="@/static/png/bear-2.png" alt="">
+      <img src="@/static/img/bear-2.png" alt="">
     </div>
     <div class="about-info">
       <div class="about-info__icons">
