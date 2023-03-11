@@ -27,7 +27,4 @@
         font-size: 20px;
         line-height: 24px;
     }
-    .menu {
-
-    }
 </style>

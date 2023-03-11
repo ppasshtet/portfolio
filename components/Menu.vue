@@ -3,19 +3,19 @@
     <NuxtLink class="link" to="">
       Home
     </NuxtLink>
-    <NuxtLink class="link" to="">
+    <NuxtLink v-scroll-to="'#about'" class="link" to="">
       About
     </NuxtLink>
-    <NuxtLink class="link" to="">
-      Service
-    </NuxtLink>
-    <NuxtLink class="link" to="">
+    <NuxtLink v-scroll-to="'#skills'" class="link" to="">
       Skills
     </NuxtLink>
-    <NuxtLink class="link" to="">
-      Blog
+    <NuxtLink v-scroll-to="'#way'" class="link" to="">
+      Way
     </NuxtLink>
-    <NuxtLink class="link" to="">
+    <NuxtLink v-scroll-to="'#portfolio'" class="link" to="">
+      Portfolio
+    </NuxtLink>
+    <NuxtLink v-scroll-to="'#contact'" class="link" to="">
       Contact
     </NuxtLink>
   </div>
@@ -39,7 +39,7 @@ export default {
 }
 .link{
   color: $brand;
-  padding-left: 70px;
+  padding-left: 50px;
   display: flex;
   justify-content: center;
   transition: all 0.3s ease;

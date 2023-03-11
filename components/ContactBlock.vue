@@ -1,0 +1,87 @@
+<template>
+  <div class="resume-link">
+    <div class="resume-icon">
+      <slot name="icon" />
+    </div>
+    <div class="resume-name text text--16">
+      <slot name="name" />
+    </div>
+    <div v-if="info" class="resume-contact text text--14">
+      <slot name="contact" />
+    </div>
+    <div class="resume-info">
+      <div class="resume-info__text text text--12">
+        view more
+      </div>
+      <div class="resume-info__icon">
+        <svg viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g clip-path="url(#clip0_1_225)">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M5.16591 6.90042C5.16591 7.13833 5.0714 7.36649 4.90318 7.53471C4.73495 7.70294 4.50679 7.79745 4.26889 7.79745C4.03098 7.79745 3.80282 7.70294 3.6346 7.53471C3.46637 7.36649 3.37186 7.13833 3.37186 6.90042C3.37186 6.66252 3.46637 6.43436 3.6346 6.26614C3.80282 6.09791 4.03098 6.0034 4.26889 6.0034C4.50679 6.0034 4.73495 6.09791 4.90318 6.26614C5.0714 6.43436 5.16591 6.66252 5.16591 6.90042ZM5.96426 2.93514C5.90118 2.87215 5.81569 2.83677 5.72655 2.83677C5.6374 2.83677 5.55191 2.87215 5.48883 2.93514L4.60527 3.81871V0.95766C4.60527 0.868445 4.56983 0.782885 4.50674 0.719801C4.44366 0.656717 4.3581 0.621277 4.26889 0.621277C4.17967 0.621277 4.09411 0.656717 4.03103 0.719801C3.96794 0.782885 3.9325 0.868445 3.9325 0.95766V3.81871L3.04894 2.93514C2.98517 2.87572 2.90083 2.84338 2.81368 2.84491C2.72654 2.84645 2.64339 2.88175 2.58176 2.94339C2.52013 3.00502 2.48482 3.08816 2.48329 3.17531C2.48175 3.26246 2.5141 3.3468 2.57352 3.41056L4.03118 4.86822L4.26889 5.10638L4.5066 4.86867L5.96426 3.41101C5.99551 3.37977 6.02031 3.34268 6.03723 3.30186C6.05415 3.26103 6.06286 3.21727 6.06286 3.17308C6.06286 3.12889 6.05415 3.08513 6.03723 3.0443C6.02031 3.00347 5.99551 2.96638 5.96426 2.93514Z" />
+          </g>
+          <defs>
+            <clipPath id="clip0_1_225">
+              <rect width="7.17617" height="7.17617" fill="white" transform="translate(0.680794 0.621277)" />
+            </clipPath>
+          </defs>
+        </svg>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  props: {
+    info: {
+      type: Boolean,
+      default: false
+    }
+  }
+}
+</script>
+
+<style lang="scss">
+
+.resume-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 10px;
+    border: 1px solid $gray;
+    border-radius: 15px;
+    height: 150px;
+    width: 300px;
+    transition: all 0.3s ease;
+}
+.resume-link:hover {
+  cursor: pointer;
+  background: $gray;
+  .resume-contact, .resume-info__text, .resume-info__icon {
+    color: $white;
+    >svg {
+      fill: $white;
+    }
+  }
+}
+.resume-icon {
+    width: 44px;
+    height: 44px;
+}
+.resume-info {
+    color: $gray !important;
+    display: flex;
+    align-items: center;
+}
+.resume-info__text {
+  padding-right: 5px;
+}
+  .resume-info__icon {
+    width: 14px;
+    height: 14px;
+    >svg {
+      fill: $gray;
+    }
+
+}
+</style>

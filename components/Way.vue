@@ -43,7 +43,7 @@
             Enigma Robotics
           </template>
           <template #subtitle>
-            Frontend Web | Blockchain Developer
+            Frontend Web Developer
           </template>
           <template #location>
             Saint-Petersburg
@@ -125,17 +125,10 @@
 }
 .way-block:nth-child(even){
   margin-left: auto;
-
-  .way-block__info{
-    left: 10%;
-    transform: translateX(10%);
-  }
+  padding-left: 5%;
 }
 .way-block:nth-child(odd) {
-  .way-block__info{
-    left: 55%;
-    transform: translateX(55%);
-  }
+  padding-left: 27%;
 }
 .way-block:last-child::after {
   content: "";

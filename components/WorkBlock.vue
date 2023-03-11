@@ -24,7 +24,6 @@
 .work-block {
     display: flex;
     flex-direction: column;
-
 }
 .work-block__title {
   color: $brand !important;

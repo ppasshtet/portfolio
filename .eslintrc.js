@@ -21,9 +21,11 @@ module.exports = {
     'vue/attribute-hyphenation': 'off',
     'vue/multi-word-component-names': 'off',
     'vue/attribute-hyphenation': 'off',
-    'vue/valid-v-slot': ["error", {
-      'allowModifiers': false
+    'vue/valid-v-slot': ['error', {
+      allowModifiers: false
+    }],
+    'vue/no-dupe-keys': ['error', {
+      groups: []
     }]
-  
   }
 }

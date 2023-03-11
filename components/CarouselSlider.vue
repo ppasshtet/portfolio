@@ -49,10 +49,13 @@ export default {
   padding-top: 40px;
   display: flex;
   justify-content: center;
-  align-items: center;
+
 }
 .carousel {
   width: 900px;
   height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 </style>

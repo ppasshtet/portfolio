@@ -54,7 +54,8 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
-    '@nuxtjs/style-resources'
+    '@nuxtjs/style-resources',
+    ['vue-scrollto/nuxt', { duration: 1000 }]
   ],
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa

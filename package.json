@@ -21,9 +21,10 @@
     "nuxt": "^2.15.8",
     "sass": "^1.58.3",
     "sass-loader": "^10.1.1",
-    "vue": "^2.7.10",
+    "vue": "^2.7.14",
     "vue-carousel": "^0.18.0",
     "vue-owl-carousel": "^2.0.3",
+    "vue-scrollto": "^2.20.0",
     "vue-server-renderer": "^2.7.10",
     "vue-template-compiler": "^2.7.10",
     "webpack": "^4.46.0"

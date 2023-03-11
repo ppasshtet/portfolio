@@ -43,7 +43,9 @@
         Blockchain | Frontend developer, I create web pages user interface, I have years of experience. I also love Web 3, I think it has a great future
       </div>
       <div class="about-info__button">
-        <Button>
+        <Button
+          :document="true"
+        >
           Download resume
           <template #icon>
             <img src="@/assets/images/file.svg" alt="">
@@ -65,6 +67,7 @@
         height: 300px;
         border: 10px solid $border;
         border-radius: 20px;
+        overflow: hidden;
     }
     .about-info {
         display: flex;
