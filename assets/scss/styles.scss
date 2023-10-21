@@ -3,7 +3,7 @@
 
 
 .text {
-    font-family: "DMSans", sans-serif;
+    font-family: "DMSansRegular", sans-serif;
     color: $brand;
     line-height: 32px;
   
@@ -20,23 +20,70 @@
     &--16 {
       font-size: 16px;
       line-height: 20px;
-      font-weight: 600;
+      font-weight: 700;
     }
     &--14 {
       font-size: 14px;
       color: $gray;
-      line-height: 20px;
+      line-height: 16px;
       font-weight: 500;
     }
     &--12 {
       font-size: 12px;
       color: $gray;
-      line-height:20px;
+      line-height: 16px;
       font-weight: 400;
     }
   }
 
+h1 {
+  font-family: "ManropeBold";
+  font-size: 52px;
+  line-height: 60px;
+}
+h2 {
+  font-family:  "DMSansMedium";
+  font-size: 24px;
+  line-height: 24px;
+  color: $brand;
+}
+h3 {
+  font-family:  "DMSansMedium";
+  font-size: 16px;
+  line-height: 24px;
+  color: $brand-light;
+}
+h5 {
+  font-family: "DMSansRegular";
+  font-size: 12px;
+  line-height: 20px;
+}
+h6 {
+  font-family: "DMSansMedium";
+  font-size: 10px;
+  line-height: 16px;
+  color: $brand-light;
+}
+
 .footerImg {
   width: 24px;
   height: 24px;
+}
+@media only screen and (max-width : 390px) {
+  h1 {
+    font-size: 44px;
+    line-height: 45px;
+  }
+  h2 {
+    font-family:  "DMSansMedium";
+    font-size: 14px;
+    line-height: 24px;
+    color: $brand;
+  }
+  h3 {
+    font-family:  "DMSansMedium";
+    font-size: 12px;
+    line-height: 20px;
+    color: $brand-light;
+  }
 }

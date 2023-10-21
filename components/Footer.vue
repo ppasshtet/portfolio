@@ -1,29 +1,26 @@
 <template>
   <div class="footer">
     <div class="footer-logo">
-      <Logo />
+      <h2><Logo /></h2>
     </div>
-    <div class="footer-info text--12">
-      All right reserved. @cazacow 2023.
+    <div class="footer-info">
+      <h5>All right reserved. @cazacow 2023.</h5>
     </div>
   </div>
 </template>
 
 <style lang="scss">
 .footer {
-    margin-top: 100px;
+    transform: translateY(100px);
     width: 100%;
-    height: 60px;
+    height: 80px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
+    padding: 10px 120px;
 }
 .footer-logo{
-  font-size: 30px;
-  line-height: 34px;
-}
-.footer-info {
-    color: $brand-light;
+  color: $black !important;
 }
 </style>

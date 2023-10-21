@@ -2,17 +2,23 @@
   <div class="welcome">
     <div class="welcome-left">
       <div class="welcome-logo">
-        <Logo />
+        <h1><Logo /></h1>
       </div>
       <div class="welcome-info">
-        <div class="info-line" />
-        <div class="info-text">
-          Web | Blockchain Developer
-        </div>
+        <vue-typed-js
+          :strings="['Web Developer', 'Blockchain Developer']"
+          :loop="true"
+          :backDelay="2000"
+          :backSpeed="20"
+        >
+          <h2>Frontend <span class="typing" /></h2>
+        </vue-typed-js>
       </div>
       <div class="welcome-text">
-        I’m Web | Blockchain Developer in Montenegro, and I’m very passionate
-        and dedicated to my work
+        <h3>
+          I’m Web | Blockchain Developer in Montenegro, and I’m very passionate
+          and dedicated to my work
+        </h3>
       </div>
       <div class="welcome-button">
         <Button
@@ -52,56 +58,49 @@
 </template>
 
 <style lang="scss" scoped>
-    .welcome {
-        font-family: "ManropeBold";
-        font-size: 24px;
-        line-height: 18px;
-        display: flex;
-        justify-content: space-between;
-    }
-    .welcome-left {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-    }
-    .welcome-logo {
-        font-size: 50px;
-        line-height: 60px;
-    }
-    .welcome-info{
-        font-family:  "DMSansMedium";
-        font-size: 24px;
-        line-height: 30px;
-        color: $brand;
-        display: flex;
-        align-items: center;
-    }
-    .info-line {
-        width: 72px;
-        height: 0px;
-        border: 0.5px solid $black;
-    }
-    .info-text {
-        padding-left: 20px;
-    }
-    .welcome-text {
-        font-family:  "DMSansMedium";
-        font-size: 16px;
-        line-height: 24px;
-        color: $brand-light;
-        padding: 0px 200px 0px 0px;
-    }
-    .welcome-link {
-      display: flex;
-    }
-    .welcome-link__headHunter {
-      width: 30px;
-      height: 30px;
-      left: 15px;
-      transform: translateX(15px);
-      > svg {
-        width: 30px;
-        height: 30px;
-      }
-    }
+.welcome {
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(80px);
+}
+.welcome-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.welcome-info{
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+}
+.welcome-info::before {
+  content: "";
+  width: 72px;
+  height: 0px;
+  border: 1px solid $brand;
+  transform: translateX(-20px);
+}
+.welcome-text {
+  padding: 0px 100px 0px 0px;
+}
+.welcome-link {
+  display: flex;
+}
+.welcome-link__headHunter {
+  width: 30px;
+  height: 30px;
+  transform: translateX(15px);
+}
+
+@media only screen and (max-width : 390px) {
+  .welcome {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+  }
+  .welcome-text {
+    padding: 0px;
+  }
+}
 </style>

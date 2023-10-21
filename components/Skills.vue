@@ -1,54 +1,58 @@
 <template>
-  <div class="knowledge">
-    <div class="knowledge-header">
+  <div id="skills" class="skills">
+    <Headline
+      :title="'Skills'"
+      :subtitle="'My technical level'"
+    />
+    <div class="skills-header">
       <div
-        v-for="headerIcon in headerIcons"
-        :key="headerIcon"
-        class="header"
+        v-for="(headerIcon, headerIconId) in headerIcons"
+        :key="headerIconId"
+        class="block"
         :class="{'radius-top-left' : headerIcon.title === 'HTML 5', 'radius-top-right' : headerIcon.title === 'Node'}"
       >
         <div class="icon">
           <img :src="require(`../assets/images/${headerIcon.img}.svg`)" alt="">
         </div>
-        <div class="title">
+        <div class="title text text--14">
           {{ headerIcon.title }}
         </div>
-        <div class="subtitle">
+        <div class="subtitle text text--12">
           {{ headerIcon.subtitle }}
         </div>
       </div>
     </div>
-    <div class="knowledge-center">
+    <div class="skills-center">
       <div
-        v-for="centerIcon in centerIcons"
-        :key="centerIcon"
-        class="header"
+        v-for="(centerIcon, centerIconId) in centerIcons"
+        :key="centerIconId"
+        class="block"
       >
         <div class="icon">
           <img :src="require(`../assets/images/${centerIcon.img}.svg`)" alt="">
         </div>
-        <div class="title">
+        <div class="title text text--14">
           {{ centerIcon.title }}
         </div>
-        <div class="subtitle">
+        <div class="subtitle text text--12">
           {{ centerIcon.subtitle }}
         </div>
       </div>
     </div>
-    <div class="knowledge-footer">
+    <div class="skills-footer">
       <div
-        v-for="footerIcon in footerIcons"
-        :key="footerIcon"
-        class="header"
+        v-for="(footerIcon, footerIconId) in footerIcons"
+        :key="footerIconId"
+        class="block"
         :class="{'radius-bottom-left' : footerIcon.title === 'NuxtJS', 'radius-bottom-right' : footerIcon.title === 'VSC'}"
       >
         <div class="icon">
           <img :src="require(`../assets/images/${footerIcon.img}.svg`)" alt="">
         </div>
-        <div class="title">
+        <div class="title text text--14">
           {{ footerIcon.title }}
         </div>
-        <div class="subtitle">
+        <div class="subtitle text text--12">
           {{ footerIcon.subtitle }}
         </div>
       </div>
@@ -138,64 +142,58 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-    .knowledge {
-        display: flex;
-        flex-direction: column;
-        padding-top: 40px;
-    }
-    .radius-top-left {
-        border-top-left-radius: 20px;
-    }
-    .radius-bottom-left {
-        border-bottom-left-radius: 20px;
-    }
-    .radius-top-right {
-        border-top-right-radius: 20px;
-    }
-    .radius-bottom-right {
-        border-bottom-right-radius: 20px;
-    }
-    .knowledge-header {
-        display: grid;
-        grid-template-columns: repeat(4, 24%);
-        justify-content: space-between;
-    }
-    .knowledge-center {
-        display: grid;
-        grid-template-columns: repeat(5, 19%);
-        justify-content: space-between;
-        padding-top: 1%;
-    }
-    .knowledge-footer {
-        display: grid;
-        grid-template-columns: repeat(4, 24%);
-        justify-content: space-between;
-        padding-top: 1%;
-    }
-    .header {
-        border: 0.5px solid $gray;
-        height: 150px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-    .icon {
-        >img {
-            width: 60px;
-            height: 70px;
-        }
-    }
-    .title {
-        font-family: "DMSansRegular";
-        font-size: 14px;
-        line-height: 18px;
-    }
-    .subtitle {
-        font-family: "DMSansRegular";
-        font-size: 12px;
-        line-height: 14px;
-        color: $gray;
-        padding-top: 5px;
-    }
+.skills {
+  display: flex;
+  flex-direction: column;
+}
+.skills-header {
+  display: grid;
+  grid-template-columns: repeat(4, 24%);
+  justify-content: space-between;
+  margin-top: 40px;
+}
+.skills-center {
+  display: grid;
+  grid-template-columns: repeat(5, 19%);
+  justify-content: space-between;
+  padding-top: 1%;
+}
+.skills-footer {
+  display: grid;
+  grid-template-columns: repeat(4, 24%);
+  justify-content: space-between;
+  padding-top: 1%;
+}
+.block {
+  border: 0.5px solid $gray;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.icon {
+  >img {
+      width: 50px;
+      height: 60px;
+  }
+}
+.title {
+  color: $brand;
+}
+.subtitle {
+  padding-top: 5px;
+}
+.radius-top-left {
+  border-top-left-radius: 20px;
+}
+.radius-bottom-left {
+  border-bottom-left-radius: 20px;
+}
+.radius-top-right {
+  border-top-right-radius: 20px;
+}
+.radius-bottom-right {
+  border-bottom-right-radius: 20px;
+}
 </style>

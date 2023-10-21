@@ -1,63 +1,35 @@
 <template>
   <div class="index">
-    <transition name="fade">
-      <div v-if="buttonShow" class="buttonUp" @click="click">
-        <div class="buttonUp-text">
-          Upstairs
-        </div>
-        <div class="buttonUp-icon">
-          <img src="@/assets/images/scroll-up.svg" alt="">
-        </div>
-      </div>
-    </transition>
     <Header />
-    <Welcome />
-    <ScrollDown />
-    <Headline id="about">
-      <template #title>
-        About me
-      </template>
-      <template #subtitle>
-        My introducatio
-      </template>
-    </Headline>
-    <About />
-    <Headline id="skills">
-      <template #title>
-        Skills
-      </template>
-      <template #subtitle>
-        My technical level
-      </template>
-    </Headline>
-    <Knowledge />
-    <Headline id="way">
-      <template #title>
-        My way
-      </template>
-      <template #subtitle>
-        My professional way in other project
-      </template>
-    </Headline>
-    <Way />
-    <Headline id="portfolio">
-      <template #title>
-        Portfolio
-      </template>
-      <template #subtitle>
-        My portfolio works in other project
-      </template>
-    </Headline>
-    <CarouselSlider />
-    <Headline id="contact">
-      <template #title>
-        Contact me
-      </template>
-      <template #subtitle>
-        Get in touch
-      </template>
-    </Headline>
-    <Contact />
+    <div class="container">
+      <transition name="fade">
+        <div v-if="buttonShow" class="buttonUp" @click="click">
+          <div class="buttonUp-text">
+            Upstairs
+          </div>
+          <div class="buttonUp-icon">
+            <img src="@/assets/images/scroll-up.svg" alt="">
+          </div>
+        </div>
+      </transition>
+      <Welcome />
+      <ScrollDown />
+      <About />
+      <Skills />
+      <Way />
+      <Headline
+        id="portfolio"
+        :title="'Portfolio'"
+        :subtitle="'My portfolio works in other project'"
+      />
+      <CarouselSlider />
+      <Headline
+        id="contact"
+        :title="'Contact me'"
+        :subtitle="'Get in touch'"
+      />
+      <Contact />
+    </div>
     <Footer />
   </div>
 </template>
@@ -89,10 +61,6 @@ export default {
 </script>
 
 <style lang="scss">
-.index {
-  padding: 10px 150px;
-  background: $background;
-}
 .buttonUp{
   position: fixed;
   right: 35px;
@@ -128,5 +96,11 @@ export default {
 }
 .fade-enter, .fade-leave-to {
   opacity: 0;
+}
+
+@media only screen and (max-width : 390px) {
+  .index {
+    padding: 10px 40px;
+  }
 }
 </style>

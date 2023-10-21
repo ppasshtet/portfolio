@@ -1,36 +1,13 @@
 <template>
-  <a v-if="telegram" class="button" :href="'https://t.me/cazacow'" target="_blank">
+  <div class="button" @click="$emit('click')">
     <div class="button-text">
-      <slot />
+      close It
     </div>
     <div class="button-icon">
-      <slot name="icon" />
+      <img src="@/assets/images/send.svg" alt="">
     </div>
-  </a>
-  <a v-else-if="document" class="button" href="/img/kazakov.pdf" download="KazakovPavel">
-    <div class="button-text">
-      <slot />
-    </div>
-    <div class="button-icon">
-      <slot name="icon" />
-    </div>
-  </a>
+  </div>
 </template>
-
-<script>
-export default {
-  props: {
-    telegram: {
-      type: Boolean,
-      default: false
-    },
-    document: {
-      type: Boolean,
-      default: false
-    }
-  }
-}
-</script>
 
 <style lang="scss">
 .button {

@@ -1,106 +1,96 @@
 <template>
-  <div class="way">
+  <div id="way" class="way">
+    <Headline
+      :title="'My way'"
+      :subtitle="'My professional way in other project'"
+    />
     <div class="way-block">
-      <div class="way-block__info">
-        <WorkBlock>
-          <template #title>
-            Freelance
-          </template>
-          <template #subtitle>
-            Frontend Web Developer
-          </template>
-          <template #location>
-            Montenegro
-          </template>
-          <template #date>
-            October 2022 — March 2023
-          </template>
-        </WorkBlock>
+      <div
+        v-for="(wayArray, wayArrayId) in wayArrays"
+        :key="wayArrayId"
+        class="way-block__info"
+      >
+        <div class="info">
+          <WorkBlock
+            :title="wayArray.title"
+            :subtitle="wayArray.subtitle"
+            :location="wayArray.location"
+            :date="wayArray.date"
+            :leftPosition="wayArray.position"
+            @click="showModal = true"
+          />
+        </div>
       </div>
     </div>
-    <div class="way-block">
-      <div class="way-block__info">
-        <WorkBlock>
-          <template #title>
-            Infinity Girls
-          </template>
-          <template #subtitle>
-            Frontend Web | Blockchain Developer
-          </template>
-          <template #location>
-            Saint-Petersburg
-          </template>
-          <template #date>
-            February 2022 — May 2022
-          </template>
-        </WorkBlock>
-      </div>
-    </div>
-    <div class="way-block">
-      <div class="way-block__info">
-        <WorkBlock>
-          <template #title>
-            Enigma Robotics
-          </template>
-          <template #subtitle>
-            Frontend Web Developer
-          </template>
-          <template #location>
-            Saint-Petersburg
-          </template>
-          <template #date>
-            September 2020 — March 2022
-          </template>
-        </WorkBlock>
-      </div>
-    </div>
-    <div class="way-block">
-      <div class="way-block__info">
-        <WorkBlock>
-          <template #title>
-            Bekary 85
-          </template>
-          <template #subtitle>
-            Frontend Web Developer
-          </template>
-          <template #location>
-            Saint-Petersburg
-          </template>
-          <template #date>
-            September 2019 — August 2020
-          </template>
-        </WorkBlock>
-      </div>
-    </div>
-    <div class="way-block">
-      <div class="way-block__info">
-        <WorkBlock>
-          <template #title>
-            Bonch Dev
-          </template>
-          <template #subtitle>
-            Frontend Web Developer
-          </template>
-          <template #location>
-            Saint-Petersburg
-          </template>
-          <template #date>
-            October 2018 — June 2019
-          </template>
-        </WorkBlock>
-      </div>
-    </div>
+    <BlockModal v-show="showModal" @close-modal="showModal = false" />
   </div>
 </template>
 
+<script>
+export default {
+  data () {
+    return {
+      wayArrays: [
+        {
+          title: 'Freelance',
+          subtitle: 'Frontend Web Developer',
+          location: 'Montenegro',
+          date: 'October 2022 — March 2023',
+          position: true,
+          num: 0,
+          info: ['1', '2', '3']
+        },
+        {
+          title: 'Infinity Girls',
+          subtitle: 'Frontend Web | Blockchain Developer',
+          location: 'Saint-Petersburg',
+          date: 'February 2022 — May 2022',
+          position: false,
+          num: 1,
+          info: ['4', '5', '6']
+        },
+        {
+          title: 'Enigma Robotics',
+          subtitle: 'Frontend Web Developer',
+          location: 'Saint-Petersburg',
+          date: 'September 2020 — March 2022',
+          position: true,
+          num: 2,
+          info: ['7', '8', '9']
+        },
+        {
+          title: 'Bekary 85',
+          subtitle: 'Frontend Web Developer',
+          location: 'Saint-Petersburg',
+          date: 'September 2019 — August 2020',
+          position: false,
+          num: 3,
+          info: ['10', '11', '12']
+        },
+        {
+          title: 'Bonch Dev',
+          subtitle: 'Frontend Web Developer',
+          location: 'Saint-Petersburg',
+          date: 'October 2018 — June 2019',
+          position: true,
+          num: 4,
+          info: ['13', '14', '15']
+        }
+      ],
+      showModal: false
+    }
+  }
+}
+</script>
+
 <style lang="scss">
-.way{
+.way-block{
   width: 100%;
   height: auto;
   position: relative;
   margin-top: 100px;
 }
-.way::before{
+.way-block::before{
   content: "";
   position: absolute;
   left: 50%;
@@ -109,11 +99,11 @@
   height: 100%;
   background: $gray;
 }
-.way-block {
+.way-block__info {
   height: 150px;
   width: 50%;
 }
-.way-block::before {
+.way-block__info::before {
   content: "";
   position: absolute;
   left: 50%;
@@ -123,14 +113,16 @@
   border-radius: 15px;
   background: $gray;
 }
-.way-block:nth-child(even){
+.way-block__info:nth-child(even){
   margin-left: auto;
-  padding-left: 5%;
+  padding-left: 40px;
 }
-.way-block:nth-child(odd) {
-  padding-left: 27%;
+.way-block__info:nth-child(odd) {
+  .info {
+    position: relative;
+  }
 }
-.way-block:last-child::after {
+.way-block__info:last-child::after {
   content: "";
   position: absolute;
   left: 50%;
@@ -140,7 +132,7 @@
   border-radius: 15px;
   background: $gray;
 }
-.way-block__info {
+.info {
   width: auto;
   height: 150px;
 }

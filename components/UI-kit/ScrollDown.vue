@@ -1,7 +1,7 @@
 <template>
   <div class="scroll-down">
     <div class="scroll-down__text">
-      scroll down
+      <h5>scroll down</h5>
     </div>
     <div class="scroll-down__icon">
       <svg viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -20,20 +20,16 @@
 
 <style lang="scss">
 .scroll-down {
-    padding-top: 40px;
-    font-family: "DMSansRegular";
-    font-size: 12px;
-    line-height: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
-  }
-  .scroll-down__text {
-    padding-right: 10px;
+    margin-top: 40px;
   }
   .scroll-down__icon {
     height: 16px;
     width: 16px;
+    left: 10px;
+    transform: translateX(10px);
     > svg {
       fill: $black;
     }

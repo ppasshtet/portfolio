@@ -22,7 +22,8 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
-    './assets/scss/default.scss'
+    './assets/scss/default.scss',
+    'reset-css/reset.css'
   ],
 
   styleResources: {
@@ -35,7 +36,9 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    '~/plugins/vue-carousel'
+    '~/plugins/vue-carousel',
+    '~/plugins/vue-typed',
+    { src: '~/plugins/vue-modal', mode: 'client' }
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
